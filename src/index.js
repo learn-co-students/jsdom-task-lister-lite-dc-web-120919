@@ -31,4 +31,13 @@ function submitHandler(event){
   console.log("submit clicked, form submitted")
   console.log(newTask)
   addTaskToForm(newTask)
+  document.addEventListener('submit', changeBackgroudColor)
+}
+
+function changeBackgroudColor(){
+  let r1 = Math.floor(Math.random() * 256);
+  let r2 = Math.floor(Math.random() * 256);
+  let r3 = Math.floor(Math.random() * 256);
+  let bgColor = "rgb(" + r1 + "," + r2 + "," + r3 + ")";
+  document.body.style.backgroundColor = bgColor
 }
