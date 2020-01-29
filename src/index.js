@@ -41,9 +41,18 @@ function submitHandler(event){
 }
 
 function changeBackgroudColor(){
-  let r1 = Math.floor(Math.random() * 256);
-  let r2 = Math.floor(Math.random() * 256);
-  let r3 = Math.floor(Math.random() * 256);
-  let bgColor = "rgb(" + r1 + "," + r2 + "," + r3 + ")";
-  document.body.style.backgroundColor = bgColor
+  let bgColor1 = {
+    r1: Math.floor(Math.random() * 256),
+    r2: Math.floor(Math.random() * 256),
+    r3: Math.floor(Math.random() * 256)
+  }
+  let bgColor2 = {
+    r1: Math.floor(Math.random() * 256),
+    r2: Math.floor(Math.random() * 256),
+    r3: Math.floor(Math.random() * 256)
+  }
+   bgColor1.rgb = 'rgb(' + bgColor1.r1 + ', ' + bgColor1.r2 + ', ' + bgColor1.r3 + ')';
+   bgColor2.rgb = 'rgb(' + bgColor2.r1 + ', ' + bgColor2.r2 + ', ' + bgColor2.r3 + ')';
+  document.body.style.background = 'radial-gradient('+bgColor1.rgb+', '+bgColor2.rgb+')';
 }
+
