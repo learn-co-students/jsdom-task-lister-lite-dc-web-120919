@@ -7,7 +7,7 @@ html {
 body {
   min-height: 100%;
   min-width: 100%;
-  background: radial-gradient(rgb(204, 162, 203), rgb(239, 61, 88));
+  background: linear-gradient(rgb(0, 136, 62), rgb(10, 156, 54));
 }
 
 button {

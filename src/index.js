@@ -53,6 +53,6 @@ function changeBackgroudColor(){
   }
    bgColor1.rgb = 'rgb(' + bgColor1.r1 + ', ' + bgColor1.r2 + ', ' + bgColor1.r3 + ')';
    bgColor2.rgb = 'rgb(' + bgColor2.r1 + ', ' + bgColor2.r2 + ', ' + bgColor2.r3 + ')';
-  document.body.style.background = 'radial-gradient('+bgColor1.rgb+', '+bgColor2.rgb+')';
+  document.body.style.background = 'linear-gradient('+bgColor1.rgb+', '+bgColor2.rgb+')';
 }
 
