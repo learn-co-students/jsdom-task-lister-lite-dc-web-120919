@@ -11,8 +11,8 @@
 
     <form id="create-task-form" action="#" method="post">
       <label for="new-task-description">Task description:</label>
-      <input type="text" id="new-task-description" name="new-task-description" placeholder="description">
-      <input type="submit" value="Create New Task">
+      <input type="text" id="new-task-description" name="new-task-description" placeholder="description" value="">
+      <input type="submit" value="Create New Task" id= "submit">
     </form>
 
     <div id="list">
@@ -20,9 +20,20 @@
       <ul id="tasks">
       </ul>
     </div>
-
+    
     <script src="./src/index.js"></script>
   </div>
+  <table id = "tasks-table" class = "table">
+    <tr>
+      <th id = "table-name ">Tasks</th>
+    </tr>
+    <tbody>
+      <tr class = "body">
+      <td class ="task" id = "row-1"> Do your homework</td>
+      <td class ="task" id = "row-2"> study coding challenge</td>
+</tr>
+    </tbody>
+  </table>
 
 </body>
 </html>
