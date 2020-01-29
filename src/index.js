@@ -23,8 +23,10 @@ function submitHandler(event){
 
 function addTask(taskDescription, dueDate){
 
-  let table = getTaskList();
-  let newTaskRow = table.appendChild(makeNewRow(taskDescription));
+  let taskTable = getTaskList();
+  let newRow = makeNewRow(taskDescription);
+  let newTaskRow = taskTable.appendChild(newRow);
+  debugger;
   let newButton = addDeleteButton(taskDescription);
   let addPriorityButton = addPriority();
   let newDueDate = dueDateParagraph(dueDate);
@@ -74,18 +76,17 @@ function addPriority(){
   //   priorityDropdown.add(a);
   // }
   //
-  let priority1 = document.createElement("option")
-  let priority2 = document.createElement("option")
-  let priority3 = document.createElement("option")
-  priority1.text = "High"
-  priority2.text = "Medium"
-  priority3.text = "Low"
-  // priorityDropdown.onchange = changePriorityStatus();
-  priorityDropdown["onchange"] = "sample text";
-  priorityDropdown.add(priority1)
-  priorityDropdown.add(priority2)
-  priorityDropdown.add(priority3)
+  addDropdownOption("High", priorityDropdown);
+  addDropdownOption("Medium", priorityDropdown);
+  addDropdownOption("Low", priorityDropdown);
 return priorityDropdown
+}
+
+function addDropdownOption(menuLabel, dropdownOrigin){
+
+  let newMenu = document.createElement("option");
+  newMenu.text = menuLabel;
+  dropdownOrigin.add(newMenu);
 }
 
 function changePriorityStatus(){
