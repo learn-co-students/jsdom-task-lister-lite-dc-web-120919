@@ -21,21 +21,23 @@ function submitHandler(event){
 
 
 function getTable(){
-  return document.querySelector('.tr')
+  return document.querySelector('tbody')
 }
 
 function makeNewRow(description){
   let newRow = getTable()
-  // let tr = document.querySelector('.tr')
+ 
+  let taskRow = document.createElement('tr')
   let descriptionCell = document.createElement('td')
 
   descriptionCell.classList = "task"
 
   descriptionCell.innerText = description
-  
- newRow.appendChild(descriptionCell)
+ newRow.appendChild(taskRow)
+ taskRow.appendChild(descriptionCell)
+
   descriptionCell.id = getNewId()
-  return newRow
+  return taskRow
 }
 
 function getNewId(){
