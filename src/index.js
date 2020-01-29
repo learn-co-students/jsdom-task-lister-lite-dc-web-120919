@@ -16,41 +16,31 @@ function submitHandler(event){
 
   let description =  userInput.value
   console.log("submitBtn has been clicked")
-  addDescription(description)
+  makeNewRow(description)
 }
 
 
 function getTable(){
-  return document.querySelector('.body')
+  return document.querySelector('.tr')
 }
-
-function addDescription(description){
-  let table = getTable()
-  let newRow = makeNewRow(description)
-  table.appendChild(newRow)
-}
-
 
 function makeNewRow(description){
-// let newRow = document.createElement('tr')
-let body = document.querySelector('.body')
-let  descriptionCell = document.createElement('td')
-descriptionCell.classList = "task"
+  let newRow = getTable()
+  // let tr = document.querySelector('.tr')
+  let descriptionCell = document.createElement('td')
 
-descriptionCell.innerText = description
+  descriptionCell.classList = "task"
 
-body.appendChild(descriptionCell)
-newRow.id = getNewId()
-return body
+  descriptionCell.innerText = description
+  
+ newRow.appendChild(descriptionCell)
+  descriptionCell.id = getNewId()
+  return newRow
 }
 
-// change the id base on which they are in 
-// section in table
-
-
- function getNewId(){
+function getNewId(){
    let rowLength = document.querySelectorAll(".task").length
-  //  debugger
+
     let currentRowLength = rowLength+1
   return `row-${currentRowLength}`
  }
