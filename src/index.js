@@ -5,22 +5,26 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener('submit', submitHandler)
 });
 
-function makeNewListItem(newTask){
+function makeNewListItem(newTask, newTaskDueDate){
 
   console.log("switched to makeNewListItem")
   let listItem = document.createElement("li")
+  let nestedList = document.createElement("ul")
+  let listItemDueDate = document.createElement("li")
   console.log(listItem)
   listItem.innerText = newTask
+  listItemDueDate.innerText = newTaskDueDate
+  nestedList.appendChild(listItemDueDate)
+  listItem.appendChild(nestedList)
   return listItem
-
 }
 
 
-function addTaskToForm(newTask) {
+function addTaskToForm(newTask, newTaskDueDate) {
   console.log("switched to taskToForm")
-  let taskList = document.querySelector("ul")
+  let taskList = document.querySelector("ol")
   console.log(taskList)
-  let newListItem = makeNewListItem(newTask)
+  let newListItem = makeNewListItem(newTask, newTaskDueDate)
   
   taskList.appendChild(newListItem)
 }
@@ -28,9 +32,11 @@ function addTaskToForm(newTask) {
 function submitHandler(event){
   event.preventDefault()
   let newTask = document.getElementById("new-task-description").value
+  let newTaskDueDate = document.getElementById("new-task-due-date").value
   console.log("submit clicked, form submitted")
   console.log(newTask)
-  addTaskToForm(newTask)
+  console.log(newTaskDueDate)
+  addTaskToForm(newTask, newTaskDueDate)
   document.addEventListener('submit', changeBackgroudColor)
 }
 
